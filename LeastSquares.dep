@@ -1,0 +1,9 @@
+# Microsoft Developer Studio Generated Dependency File, included by LeastSquares.mak
+
+.\LeastSquares.cpp : \
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

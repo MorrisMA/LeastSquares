@@ -49,7 +49,7 @@ void main(int argc, char* argv[])
 
     if(Nmax < N) {
 		fprintf(stderr, "Error: Polynomial order (N = argv[1]) exceeds allowable range. Maximum order = %d\n", Nmax);
-    } else if((in = fopen(argv[2], "r")) == NULL) {
+    } else if(NULL == (in = fopen(argv[2], "r"))) {
 		fprintf(stderr, "Error: Cannot open input file: %s\n", argv[2]);
     } else {
         // Initialize A[][], B[], x[], and y[]
@@ -71,7 +71,7 @@ void main(int argc, char* argv[])
         // Read input data from input file
 
         i = 1;
-        while((EOF != fscanf(in, "%lf, %lf\n", &x[i], &y[i])) && (i <= Mmax)) {
+        while((EOF != fscanf(in, "%lf, %lf\n", &x[i], &y[i])) && (Mmax >= i)) {
             printf("%12.4le, %12.4le\n", x[i], y[i]);
             i++;
         }
@@ -103,11 +103,11 @@ void main(int argc, char* argv[])
         //
         //  which can be arranged in the following matrix form
         //
-        //  |sum[g1(x_m)*g1(x_m)]...sum[g1(x_m)*gk(x_m)||c1| |sum[g1(x_m)*y_m]|
-        //  |sum[g2(x_m)*g1(x_m)]...sum[g2(x_m)*gk(x_m)||c2| |sum[g2(x_m)*y_m]|
-        //  |sum[g3(x_m)*g1(x_m)]...sum[g3(x_m)*gk(x_m)||c3| |sum[g2(x_m)*y_m]|
-        //  |                                          ||  |=|                |
-        //  |sum[gk(x_m)*g1(x_m)]...sum[gk(x_m)*gk(x_m)||ck| |sum[gk(x_m)*y_m]|
+        //  |sum[g1(x_m)*g1(x_m)]...sum[g1(x_m)*gk(x_m)]||c1| |sum[g1(x_m)*y_m]|
+        //  |sum[g2(x_m)*g1(x_m)]...sum[g2(x_m)*gk(x_m)]||c2| |sum[g2(x_m)*y_m]|
+        //  |sum[g3(x_m)*g1(x_m)]...sum[g3(x_m)*gk(x_m)]||c3| |sum[g2(x_m)*y_m]|
+        //  |                                           ||  |=|                |
+        //  |sum[gk(x_m)*g1(x_m)]...sum[gk(x_m)*gk(x_m)]||ck| |sum[gk(x_m)*y_m]|
         //
         //  The basis functions can be orthogonal: gi(x_m)gj(x_m) = 0, i <> j
         //  which would reduce the above A[]][] matrix into a diagonal form that

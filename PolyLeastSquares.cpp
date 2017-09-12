@@ -75,7 +75,7 @@ void main(int argc, char* argv[])
             printf("%12.4le, %12.4le\n", x[i], y[i]);
             i++;
         }
-		fclose(in);
+        fclose(in);
 
         M    = (i - 1);     // Calculate input data length
         Nrow = (N + 1);     // Set number of rows based on polynomial order N
@@ -298,14 +298,14 @@ void main(int argc, char* argv[])
             B[i] = (A[i][Ncol] - tmp);
         }
 
-		// Print polynomial approximation's coefficients: c[0],...,c[N]
+        // Print polynomial approximation's coefficients: c[0],...,c[N]
 
-		printf("\n");
-		for(k = 1; k <= Nrow; k++) {
-			printf("|%15.6le|\n", B[k]);
-		}
+        printf("\n");
+        for(k = 1; k <= Nrow; k++) {
+            printf("|%15.6le|\n", B[k]);
+        }
 
-		printf("\nEnter <CR> to continue: "); ch = getchar();
+        printf("\nEnter <CR> to continue: "); ch = getchar();
     }
 
     exit(0);

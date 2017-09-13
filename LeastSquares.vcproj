@@ -47,6 +47,7 @@
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
+				CompileAs="1"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -138,7 +139,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				LinkIncremental="0"
-				GenerateDebugInformation="true"
+				GenerateDebugInformation="false"
 				SubSystem="1"
 				OptimizeReferences="1"
 				EnableCOMDATFolding="1"

@@ -46,9 +46,9 @@ void main(int argc, char* argv[])
     N = atoi(argv[1]);
 
     if(Nmax < N) {
-		fprintf(stderr, "Error: Polynomial order (N = argv[1]) exceeds allowable range. Maximum order = %d\n", Nmax);
+        fprintf(stderr, "Error: Polynomial order (N = argv[1]) exceeds allowable range. Maximum order = %d\n", Nmax);
     } else if(NULL == (in = fopen(argv[2], "r"))) {
-		fprintf(stderr, "Error: Cannot open input file: %s\n", argv[2]);
+        fprintf(stderr, "Error: Cannot open input file: %s\n", argv[2]);
     } else {
         // Initialize A[][], B[], x[], and y[]
 
@@ -182,8 +182,8 @@ void main(int argc, char* argv[])
         //
         //  The form of U is as follows:
         //
-        //  |    1    L[1][2] ... L[1][N] |
-        //  |    0       1    ... L[2][N] |
+        //  |    1    U[1][2] ... U[1][N] |
+        //  |    0       1    ... U[2][N] |
         //  |                             |
         //  |    0       0    ...     1   |
         //
